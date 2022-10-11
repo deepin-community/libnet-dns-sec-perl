@@ -1,0 +1,243 @@
+libnet-dns-sec-perl (1.19-1) unstable; urgency=medium
+
+  * Team upload.
+
+  [ Debian Janitor ]
+  * Remove constraints unnecessary since buster
+    * Build-Depends: Drop versioned constraint on libnet-dns-perl.
+    * libnet-dns-sec-perl: Drop versioned constraint on libnet-dns-perl
+      in Depends.
+    * libnet-dns-sec-perl: Drop versioned constraint on libnet-dns-perl
+      in Breaks.
+
+  [ gregor herrmann ]
+  * Import upstream version 1.19.
+  * Update years of upstream and packaging copyright.
+  * Declare compliance with Debian Policy 4.6.0.
+
+ -- gregor herrmann <gregoa@debian.org>  Fri, 15 Oct 2021 18:20:11 +0200
+
+libnet-dns-sec-perl (1.18-1) unstable; urgency=medium
+
+  * Team upload.
+  * Import upstream version 1.18.
+  * debian/watch: remove uversionmangle which hasn't worked anymore
+    anyway.
+
+ -- gregor herrmann <gregoa@debian.org>  Sun, 04 Oct 2020 18:06:21 +0200
+
+libnet-dns-sec-perl (1.17-1) unstable; urgency=medium
+
+  * Team upload.
+  * Update 'DEB_BUILD_MAINT_OPTIONS = hardening=+bindnow' to '=+all'.
+  * Import upstream version 1.17.
+  * Bump debhelper-compat to 13.
+
+ -- gregor herrmann <gregoa@debian.org>  Sat, 04 Jul 2020 14:26:58 +0200
+
+libnet-dns-sec-perl (1.16-1) unstable; urgency=medium
+
+  * Team upload.
+  * Import upstream version 1.16.
+
+ -- gregor herrmann <gregoa@debian.org>  Fri, 15 May 2020 22:37:03 +0200
+
+libnet-dns-sec-perl (1.15-1) unstable; urgency=medium
+
+  * Team upload.
+  * Import upstream version 1.15.
+  * Update years of upstream and packaging copyright.
+  * Declare compliance with Debian Policy 4.5.0.
+  * Remove <!nocheck> from libssl-dev build dependency.
+  * Add new module to debian/tests/pkg-perl/syntax-skip.
+  * Remove libtest-simple-perl from Depends.
+
+ -- gregor herrmann <gregoa@debian.org>  Sat, 08 Feb 2020 14:39:42 +0100
+
+libnet-dns-sec-perl (1.14-1) unstable; urgency=medium
+
+  * Team upload
+
+  * New upstream version 1.14
+  * d/control:
+    - Declare compliance with Debian Policy 4.4.1
+    - Add Rules-Requires-Root field
+    - Update Build-Depends for cross builds
+    - Annotate test-only build dependencies with <!nocheck>
+  * d/u/metadata:
+    - Add Bug-* fields; drop deprecated Contact/Name fields
+  * d/watch:
+    - Migrate to version 4 watch file format and simplify
+
+ -- Nick Morrott <nickm@debian.org>  Mon, 25 Nov 2019 21:31:33 +0000
+
+libnet-dns-sec-perl (1.13-1) unstable; urgency=medium
+
+  * Team upload.
+  * Import upstream version 1.13
+  * Bump debhelper compatibility version to 12.
+  * Declare compatibility with Debian Policy 4.4.0.
+  * Update dependencies and normalize with "dh-make-perl refresh".
+  * autopkgtests: don't check syntax of Net/DNS/SEC/RSA.pm.
+    Similarly to the other modules we already skip there,
+    it's not meant to be used directly.
+
+ -- intrigeri <intrigeri@debian.org>  Thu, 25 Jul 2019 02:04:54 +0000
+
+libnet-dns-sec-perl (1.11-1) unstable; urgency=medium
+
+  * Team upload
+  * Import upstream version 1.11
+  * Drop load-Net::DNS::SEC-before-using-::libcrypto.patch and exclude the
+    failing modules from syntax testing (upstream does not intend them to be
+    loaded directly)
+
+ -- Florian Schlichting <fsfs@debian.org>  Fri, 21 Dec 2018 20:48:20 +0100
+
+libnet-dns-sec-perl (1.10-2) unstable; urgency=medium
+
+  * Team upload
+  * patch Net::DNS::SEC::* to load Net::DNS::SEC before using ::libcrypto
+    (Closes: #909911)
+
+ -- Damyan Ivanov <dmn@debian.org>  Sat, 06 Oct 2018 05:55:30 +0000
+
+libnet-dns-sec-perl (1.10-1) unstable; urgency=medium
+
+  * Team upload.
+  * Import upstream version 1.10
+  * Declare compliance with Debian Policy 4.2.1
+
+ -- Angel Abad <angel@debian.org>  Sat, 29 Sep 2018 09:59:06 +0200
+
+libnet-dns-sec-perl (1.09-1) unstable; urgency=medium
+
+  * Team upload.
+  * New upstream release.
+  * Rename section in gbp.cong to new style.
+
+ -- gregor herrmann <gregoa@debian.org>  Wed, 20 Jun 2018 20:28:08 +0200
+
+libnet-dns-sec-perl (1.08-1) unstable; urgency=medium
+
+  * Team upload.
+
+  [ Salvatore Bonaccorso ]
+  * Update Vcs-* headers for switch to salsa.debian.org
+
+  [ gregor herrmann ]
+  * New upstream release.
+  * debian/watch: use MetaCPAN URL.
+  * debian/copyright: add more copyright holders.
+  * Update (build) dependencies.
+  * Change package to arch:any.
+  * Declare compliance with Debian Policy 4.1.4.
+  * Bump debhelper compatibility level to 10.
+  * Use HTTPS for the Homepage field.
+  * Set bindnow linker flag in debian/rules.
+  * Update debian/tests/pkg-perl/syntax-skip.
+
+ -- gregor herrmann <gregoa@debian.org>  Thu, 17 May 2018 23:04:23 +0200
+
+libnet-dns-sec-perl (1.03-2) unstable; urgency=medium
+
+  * Update build-dependencies according to Makefile.PL
+    (We also need to support backports, don't remove
+     versioned depends, just for sake of it.)
+  * Run wrap-and-sort -a
+  * Don't install TODO, it doesn't exist
+
+ -- Ondřej Surý <ondrej@debian.org>  Fri, 23 Jun 2017 10:25:01 +0200
+
+libnet-dns-sec-perl (1.03-1) unstable; urgency=medium
+
+  * Team upload.
+
+  [ gregor herrmann ]
+  * debian/copyright: change Copyright-Format 1.0 URL to HTTPS.
+
+  [ Angel Abad ]
+  * Import upstream version 1.03
+  * debian/copyright: Update years.
+  * debian/control: Update {Build-}Depends versions.
+  * Remove debian/README.source and empty debian/patches
+
+ -- Angel Abad <angel@debian.org>  Thu, 20 Oct 2016 17:04:51 +0200
+
+libnet-dns-sec-perl (1.02-1) unstable; urgency=medium
+
+  * Team upload
+
+  [ Salvatore Bonaccorso ]
+  * debian/control: Use HTTPS transport protocol for Vcs-Git URI
+
+  [ Axel Beckert ]
+  * Import upstream version 1.02
+    + No more try to install "TODO", it's gone.
+    + Add Breaks on libnet-dns-perl << 1.01.
+  * Bump debhelper compatibility to 9.
+  * Mention module name in long package description.
+  * Declare compliance with Debian Policy 3.9.8.
+  * Fix lintian warning empty-short-license-in-dep5-copyright.
+  * Make package as autopkgtestable.
+
+ -- Axel Beckert <abe@debian.org>  Fri, 22 Apr 2016 01:26:09 +0200
+
+libnet-dns-sec-perl (0.21-1) unstable; urgency=medium
+
+  * New upstream version 0.21
+  * Add libcrypt-openssl-random-perl in (Build-)Depends to fix FTBFS
+
+ -- Ondřej Surý <ondrej@debian.org>  Fri, 24 Oct 2014 12:44:21 +0200
+
+libnet-dns-sec-perl (0.20-1) unstable; urgency=medium
+
+  [ Salvatore Bonaccorso ]
+  * Update Vcs-Browser URL to cgit web frontend
+
+  [ Ondřej Surý ]
+  * New upstream version 0.20
+
+ -- Ondřej Surý <ondrej@debian.org>  Mon, 18 Aug 2014 13:26:07 +0200
+
+libnet-dns-sec-perl (0.19-2) unstable; urgency=medium
+
+  * Upload to unstable
+
+ -- Ondřej Surý <ondrej@debian.org>  Thu, 19 Jun 2014 14:30:02 +0200
+
+libnet-dns-sec-perl (0.19-1) experimental; urgency=medium
+
+  * New upstream version 0.19
+  * Refresh packaging with new dh-make-perl
+  * Add upstream documentation: TODO and README
+  * d/control: Make sure we depend on Net::DNS >= 0.69
+  * Remove obsolete upstream patches
+
+ -- Ondřej Surý <ondrej@debian.org>  Fri, 13 Jun 2014 09:53:31 +0200
+
+libnet-dns-sec-perl (0.16-2) unstable; urgency=low
+
+  * Update Vcs-* links
+  * Remove Digest::SHA1 from dependencies (Closes: #594273)
+
+ -- Ondřej Surý <ondrej@debian.org>  Thu, 18 Aug 2011 10:27:02 +0200
+
+libnet-dns-sec-perl (0.16-1) unstable; urgency=low
+
+  * New upstream version 0.16 (Closes: #574282)
+
+ -- Ondřej Surý <ondrej@debian.org>  Tue, 11 May 2010 12:29:54 +0200
+
+libnet-dns-sec-perl (0.15-1) unstable; urgency=low
+
+  * New Upstream Version
+    - 09-dnssec.t.dpatch fixed upstream
+
+ -- Ondřej Surý <ondrej@debian.org>  Thu, 20 Aug 2009 17:18:30 +0200
+
+libnet-dns-sec-perl (0.14-1) unstable; urgency=low
+
+  * Initial Release. (Closes: #493118)
+
+ -- Ondřej Surý <ondrej@debian.org>  Thu, 31 Jul 2008 21:00:24 +0100

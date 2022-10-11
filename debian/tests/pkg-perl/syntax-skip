@@ -1,0 +1,8 @@
+# these are not meant to be loaded / compiled independently, see rt#127307
+Net/DNS/SEC/DSA.pm
+Net/DNS/SEC/Digest.pm
+Net/DNS/SEC/ECDSA.pm
+Net/DNS/SEC/EdDSA.pm
+Net/DNS/SEC/RSA.pm
+# Also: Necessary dependencies not packaged
+Net/DNS/SEC/ECCGOST.pm

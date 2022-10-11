@@ -1,0 +1,46 @@
+#!/usr/bin/perl
+#$Id: key2ds 1807 2020-09-28 11:38:28Z willem $
+
+#	A little util to convert DNSKEY records to DS records
+#	from stdin to stdout
+#
+#	Author: Miek Gieben, NLnetLabs
+
+
+use strict;
+use warnings;
+use Net::DNS::SEC;
+use Net::DNS::ZoneFile;
+
+my $source = Net::DNS::ZoneFile->new('-');			# STDIN
+while ( my $keyrr = $source->read ) {
+	next unless $keyrr->isa('Net::DNS::RR::DNSKEY');
+
+	foreach my $digtype (qw(SHA256 SHA1)) {
+		my $ds = Net::DNS::RR::DS->create( $keyrr, digtype => $digtype );
+		$ds->print;					# STDOUT
+	}
+}
+
+exit 0;
+
+=head1 NAME
+
+key2ds - Utility to create DS records from DNSKEY RRs read from stdin.
+
+=head1 SYNOPSIS
+
+	key2ds <keys.txt >ds.txt
+
+=head1 DESCRIPTION
+
+C<key2ds> reads the key data from STDIN and prints the corresponding
+DS record on STDOUT.
+
+=head1 COPYRIGHT
+
+This program is free software; you can redistribute it and/or modify
+it under the same terms as Perl itself. 
+
+=cut
+
